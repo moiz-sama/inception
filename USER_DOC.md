@@ -316,26 +316,7 @@ ls -la ~/data/wordpress/
 ```bash
 ls -la ~/data/mariadb/
 ```
-
 These directories should contain data even after stopping containers.
-
----
-
-## Quick Reference Commands
-
-| Action | Command |
-|--------|---------|
-| Start infrastructure | `make` |
-| Stop infrastructure | `make down` |
-| View running containers | `docker ps` |
-| Access WordPress CLI | `docker exec -it wordpress bash` |
-| Access MariaDB CLI | `docker exec -it mariadb mysql ` |
-| Check NGINX config | `docker exec nginx nginx -t` |
-| Restart single service | `docker restart <container_name>` |
-| Complete cleanup | `make fclean` |
-| Rebuild everything | `make re` |
-
----
 
 ## Getting Help
 
