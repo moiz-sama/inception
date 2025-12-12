@@ -58,7 +58,7 @@ sudo apt-get install vim
 ---
 
 ## Environment Setup
-
+    
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/moiz-sama/inception.git
@@ -88,6 +88,8 @@ Navigate to the srcs directory and create the `.env` file:
 ```bash
 cd srcs
 vim .env
+or
+cp .env.example .env
 ```
 
 **Security Notes:**
@@ -140,34 +142,31 @@ inception/
 
 The Makefile provides convenient commands for managing the project:
 
-** Build and Start Everything:**
 ```bash
-make
+# make - Default target, builds and starts everything
+# make up - Starts containers without rebuilding
+# make down - Stops containers
+# make stop - Stops containers (alias for down)
+# make start - Starts stopped containers
+# make logs - Shows logs from all containers
+# make clean - Stops containers and removes volumes
+# make fclean - Complete cleanup (containers, images, volumes, networks)
+# make re - Full rebuild (fclean + build + up)
 ```
-This command:
-- Builds all Docker images from Dockerfiles
-- Creates necessary networks and volumes
-- Starts all containers in detached mode
-- Displays container status
 
 ### Using Docker Compose Directly
 
 **Start services:**
 ```bash
+cd srcs
 docker compose up -d
 ```
 
 **Stop services:**
 ```bash
+cd srcs
 docker compose down
 ```
-
-**Rebuild specific service:**
-```bash
-docker compose build nginx
-docker compose up -d nginx
-```
-
 ---
 
 ## Container Management
@@ -192,35 +191,6 @@ docker inspect <container_name>
 **View container resource usage:**
 ```bash
 docker stats
-```
-
-### Starting and Stopping Containers
-
-**Start all containers:**
-```bash
-docker compose -f srcs/docker-compose.yml -p inception up -d
-```
-
-**Stop all containers:**
-```bash
-docker compose -f srcs/docker-compose.yml -p inception down
-```
-
-**Restart specific container:**
-```bash
-docker restart nginx
-docker restart wordpress
-docker restart mariadb
-```
-
-**Stop specific container:**
-```bash
-docker stop <container_name>
-```
-
-**Start specific container:**
-```bash
-docker start <container_name>
 ```
 
 ### Accessing Containers
