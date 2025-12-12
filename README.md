@@ -1,5 +1,5 @@
 # inception
-This project has been created as part of the 42 curriculum by saderdou.
+*This project has been created as part of the 42 curriculum by saderdou.*
 
 # Description
 Inception is a system administration project that uses Docker to create a small infrastructure of interconnected services. The project deploys a complete web stack using Docker Compose, featuring NGINX as a reverse proxy with SSL/TLS encryption,     WordPress with PHP-FPM for content management, and MariaDB as the database backend.
@@ -142,6 +142,7 @@ For more detailed information, please refer to:
 This project is created for educational purposes as part of the 42 school curriculum.
 # Author
 saderdou - 42 Network Student
+
 
 
 
